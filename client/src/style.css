@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: system-ui;
+}
+
+:root {
+  --dark: #495C83;
+  --purple: #7A86B6;
+  --indigo: #A8A4CE  ;
+  --white: #FFFBE9;
+}
+
+body {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bio-lists {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  gap: 1em;
+  justify-items: center;
+  margin: 4em 0;
+}
+
+.card {
+  position: relative;
+  background-color: var(--purple);
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.bio-img > img {
+  padding: 10px;
+  background-color: var(--white);
+  width: 50px;
+  border-radius: 20px;
+}
+
+.card-remove {
+  position: absolute;
+  right: 0;
+  padding: 5px;
+}
+
+.card-remove > button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.card-remove > button:hover {
+  cursor: pointer;
+}
+
+.card-remove > button > svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--dark);
+}
+
+.card-remove > button > svg:hover {
+  fill: #f24e4e;
+}
+
+.card-profile {
+  padding: 10px 0;
+}
+
+.card-profile h3 {
+  font-size: 1.2em;
+}
+
+.card-profile,
+.bio-img {
+  padding: 10px;
+}
+
+.card-detail {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: .2em;
+  background-color: var(--white);
+  color: var(--dark);
+  font-size: 400;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .bio-lists {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FORM */
+.bio-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3em auto;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: var(--indigo);
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px solid var(--purple);
+  outline: none;
+}
+
+input:focus {
+  outline: 2px solid var(--dark);
+  outline-offset: 2px;
+}
+
+.bio-form__action {
+  padding-top: 12px;
+  width: 100%;
+}
+
+.button {
+  padding: 12px;
+  width: 100%;
+  background-color: transparent;
+  color: var(--white);
+  border-radius: 10px;
+  border: 2px solid var(--dark);
+  outline: none;
+  font-size: 1rem;
+  transition: all .2s ease;
+}
+
+.button:hover {
+  background-color: var(--dark);
+  color: var(--white);
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: scale(.97);
+}
