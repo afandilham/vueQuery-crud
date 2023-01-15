@@ -1,9 +1,10 @@
 <template>
   <h2>Contact VueQuery</h2>
   <BioForm />
-  <div class="bio-lists">
-    <div v-if="isLoading">Now loading...</div>
-    <BioItem v-for="item in data" :key="item.id" 
+  <div v-if="isLoading">Now loading...</div>
+  <div class="bio-lists" v-auto-animate>
+    <BioItem v-for="item in data" :key="item.id"
+      :id="item.id"
       :name="item.name" 
       :email="item.email" 
       :phone="item.phone"

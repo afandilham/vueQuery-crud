@@ -20,6 +20,16 @@ class Biodata {
     res.json(result);
   }
 
+  async getBioById(req: Request, res: Response) {
+    const { id } = req.params;
+    const bio = await prisma.bio.findUnique({
+      where: {
+        id: id
+      }
+    });
+    res.json(bio);
+  }
+
   async updateBio(req: Request, res: Response) {
     const { id } = req.params;
     const bio = await prisma.bio.update({

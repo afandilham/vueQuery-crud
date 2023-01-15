@@ -10,10 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/api', router);
 
-app.use((req: Request, res: Response, next: Function) => {
-  next(createError(404));
-});
-
 const port = 8800;
 app.listen(port, () => {
   console.log('Connected to server');
