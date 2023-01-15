@@ -9,6 +9,7 @@ router.route('/bio')
   .post(bio.createBio);
 
 router.route('/bio/:id')
+  .get(bio.getBioById)
   .put(bio.updateBio)
   .delete(bio.deleteBio);
 
